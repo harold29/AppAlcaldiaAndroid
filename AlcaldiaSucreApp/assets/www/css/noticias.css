@@ -1,0 +1,90 @@
+@CHARSET "ISO-8859-1";
+
+#pheader
+{
+	background:#fcb53e;
+	width:100%;
+	height:50px;
+	display:block;
+	border:2px solid #f5ac32;	
+}
+
+#header
+{
+	height:100%;
+	margin:auto;
+	display:block;
+}	
+
+#retarrow
+{
+	float:left;
+	margin:0;
+	width:8%;
+	display:inline;
+	position:absolute;
+	top:4%;
+	left:3%
+}
+
+#sheader
+{
+	background:#00a94e;
+	width:100%;
+	height:50px;
+}
+
+#titulo
+{
+	color:#007837;
+	margin-left:25px;
+	line-height:45px;
+}
+
+h5
+{
+	font-size:20px;
+	margin-bottom:0px;
+	margin:0;
+	font-family:"Tahoma";
+}
+
+h3
+{
+	color:#626262;
+	text-align:justify;
+	font-family:"Tahoma";
+	margin:8px;
+	font-size:15px;
+}
+
+.fotonoticias
+{
+	margin:auto;
+	display:block;
+	width:70%;
+}
+
+.fecha
+{
+	color:#626262;
+	font-size:10px;
+	font-family:"Tahoma";
+	margin:8px;
+	margin-bottom:3px;
+}
+
+p
+{
+	color:#626262;
+	text-align:justify;
+	font-family:"Tahoma";
+	margin:8px;
+	font-size:15px;
+}
+
+body
+{
+	background-color:#f1f1f1;
+	margin:0;
+}

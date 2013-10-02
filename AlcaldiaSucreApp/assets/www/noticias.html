@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Noticias</title>
+	   	<link rel = "stylesheet" type="text/css" href="css/noticias.css">
+	   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+	   	<script> 
+	   		//Script - parser json
+	   		$.getJSON("http://www.alcaldiamunicipiosucre.gob.ve/contenido/api/appmob/noticias/?dev=1", function(data){
+		          for (var i=0; i < 10; i++) {
+		        	       	   $("<img/>").attr({src:data.noticias[i].foto, class:"fotonoticias"}).appendTo("#images");
+        	       	       	   $(".gralinfo").append("<div> <h5 class="+"fecha"+">" + data.noticias[i].fecha[0] + 
+        	       	       			   "-" + data.noticias[i].fecha[1] + "-" + data.noticias[i].fecha[2] + "</h5> <h3>" + data.noticias[i].titulo +
+        	       	       			   "</h3> <p>" + data.noticias[i].resumen +"</p> </div> <br><br>");
+      	       	   }
+      		 });        
+		</script>
+		
+	</head>
+	<body>
+		<!-- Header Principal - Backbutton-->
+		<div id="pheader">
+            <img id ="header" src="img/auxk.png">
+            <a href="index.html" class="return" id="buttonreturn">
+            	<img id="retarrow" src="img/return.png">
+            </a>
+		</div>		
+		<!-- Header Secundario - Titulo de pag-->
+		<div id="sheader">
+            <h5 id="titulo">Noticias</h5>
+		</div>
+		<br>
+		<!-- Marco de noticias - rellenado por script -->
+		<div class="gralinfo" id = "images">
+	   	</div>	
+	</body>
+</html>

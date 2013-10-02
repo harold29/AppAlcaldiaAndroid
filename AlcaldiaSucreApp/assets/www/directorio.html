@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Directorio</title>
+		<link rel = "stylesheet" type="text/css" href="css/directorio.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+		<script> 
+   		//Script - parser json
+			$.getJSON("http://www.alcaldiamunicipiosucre.gob.ve/contenido/api/appmob/directorio_emergencia/?dev=1", function(data){
+				$.each(data, function (key,val) {
+					if (data[key] != "ok") {
+						$.each(data[key], function(clave,res) {
+							$(".directorio").append("<h3>" + data[key][clave].nombre + "</h3>");
+							$.each(data[key][clave].telefonos, function(ind,num) {
+								var numero = num.replace(/[^0-9A-Za-z+]/g,'');
+								if (numero.length > 7) {
+									$(".directorio").append("<a href="+"tel:"+numero+"> <h5 class="+"numeros"+">" + num + "</h5> <a>");
+								} else if (numero.length <= 7) {
+									$(".directorio").append("<a href="+"tel:+58212"+numero+"> <h5 class="+"numeros"+">" + num + "</h5> <a>");
+								}
+							});
+						});
+					};
+				});
+	  		 });        
+			</script>		
+	</head>
+	<body>	
+		<!-- Header Principal - Backbutton-->
+		<div id="pheader">
+            <img id="header" src="img/auxk.png">
+            <a href="index.html" class="back" id="backbutton">
+            	<img id="retarrow" src="img/return.png">
+            </a>
+		</div>
+		<!-- Header Secundario - Titulo de pag-->
+		<div id="sheader">
+           	<h5 id="titulo">Directorio</h5>
+		</div>
+		<!-- Marco de numeros telefonicos - rellenado por script -->		
+		<div class="directorio" id = "images">
+	   	</div>	
+		
+	</body>
+</html>
